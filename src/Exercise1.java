@@ -12,7 +12,7 @@ public class Exercise1 {
 
     private static void copier(String inputStream, String outputStream) throws IOException {
         FileInputStream src = new FileInputStream(inputStream);
-        FileOutputStream dest = new FileOutputStream(outputStream);
+        FileOutputStream dest = new FileOutputStream(outputStream, true);
 
         FileChannel inChannel = src.getChannel();
         FileChannel outChannel = dest.getChannel();
