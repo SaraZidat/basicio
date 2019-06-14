@@ -1,13 +1,11 @@
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.HashSet;
 import java.util.Set;
 
 public class Exercise8 {
     public static void main(String[] args) throws IOException {
         BufferedReader bufferedReader = new BufferedReader((new FileReader("doublons.txt")));
+        PrintStream output = new PrintStream(("sansDoublons.txt"));
         Set<String> uniqueLines = new HashSet<>();
         String line;
         while ((line = bufferedReader.readLine()) != null) {
@@ -17,5 +15,6 @@ public class Exercise8 {
             uniqueLines.add(line);
         }
         bufferedReader.close();
+        output.close();
     }
 }
